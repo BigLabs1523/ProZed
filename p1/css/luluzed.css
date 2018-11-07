@@ -18,3 +18,7 @@
 .form-spacer-right {
     margin-right: 10%;
 }
+
+.mapBox{
+    height: 600px;   
+}
