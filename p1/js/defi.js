@@ -10,45 +10,26 @@ var myLineChart = new Chart(ctx, {
     labels: ["Novembre", "Décembre", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin"],
     datasets: [{
       label: "Ordures ménagères",
-      lineTension: 0.3,
-      backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 50,
-      pointBorderWidth: 2,
+      backgroundColor: "rgba(138,138,138,0.2)",
+      borderColor: "rgba(0,0,0,1)",
       data: [30, 40, 26, 42, 34, 33, 28, 31]
     }, {
         label: "Compost",
-        pointBorderColor: "rgba(148,22,150,0.5)",
-        pointBackgroundColor: "rgba(220,220,220,0.8)",
-                            
-        lineTension: 0.3,
-        backgroundColor: "rgba(220,220,220,0.8)",
-        borderColor: "rgba(148,22,150,0.5)",
-        pointRadius: 5,
-        pointBackgroundColor: "rgba(2,117,216,1)",
-        pointBorderColor: "rgba(255,255,255,0.8)",
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: "rgba(2,117,216,1)",
-        pointHitRadius: 50,
-        pointBorderWidth: 2,
-        data: [35, 60, 56, 42, 37, 33, 24, 32]
+        borderColor: "rgba(0,174,21,0.5)",
+        backgroundColor: "rgba(0,120,21,0.6)",
+        data: [35, 60, 56, 32, 27, 33, 24, 12]
     }, {
         label: "Verre",
-        borderColor: "rgba(270,100,240,0.5)",
-        backgroundColor: "rgba(220,120,220,0.8)",
+        borderColor: "rgba(0,188,226,0.5)",
+        backgroundColor: "rgba(123,234,255,0.8)",
 
-        data: [35, 60, 56, 42, 37, 33, 24, 32]
+        data: [35, 64, 16, 32, 37, 53, 54, 12]
     }, {
         label: "Tri sélectif",
-        borderColor: "rgba(43,200,120,0.5)",
-        backgroundColor: "rgba(120,252,220,0.8)",
+        borderColor: "rgba(219,181,0,0.5)",
+        backgroundColor: "rgba(255,255,25,0.8)",
 
-        data: [35, 60, 56, 42, 37, 33, 24, 32]
+        data: [35, 40, 66, 42, 17, 33, 24, 12]
     }],
   },
   options: {
