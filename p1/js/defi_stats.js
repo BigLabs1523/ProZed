@@ -47,7 +47,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Novembre", "Décembre", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin"],
     datasets: [{
-      label: "Nous",
+      label: "Nous (Kgs/Pers)",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.1)",
       borderColor: "rgba(2,117,216,1)",
@@ -60,7 +60,7 @@ var myLineChart = new Chart(ctx, {
       pointBorderWidth: 2,
       data: [30, 40, 26, 42, 34, 33, 28, 31],
     }, {
-      label: "Famille Winters",
+      label: "Famille Bricole (Kgs/Pers)",
       lineTension: 0.3,
       backgroundColor: "rgba(255,128,0,0.2)",
       borderColor: "rgba(255,128,4,1)",
@@ -73,7 +73,7 @@ var myLineChart = new Chart(ctx, {
       pointBorderWidth: 2,
       data: [31, 40, 26, 54, 34, 13, 18, 33]
     },{
-      label: "Moyenne du défi",
+      label: "Moyenne du défi (Kgs/Pers)",
       lineTension: 0.3,
       backgroundColor: "rgba(117,117,117,0.2)",
       borderColor: "rgba(200,200,200,1)",
