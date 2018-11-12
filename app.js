@@ -35,7 +35,7 @@ var pages = [{
 },{
     active: false,
     nom: "Agenda",
-    adresse: "atelier.html",
+    adresse: "ateliers.html",
     faIcone: "fa-calendar-alt"    
 }
 ];
@@ -67,6 +67,8 @@ app.get("/", (req,res) => {
         notifs: notifs,
         pages: pagesL
     });
+
+
     
 });
 
@@ -81,17 +83,44 @@ app.get("/register.html", (req,res) => {
 });
 
 app.get("/defi.html", (req,res) => {
-    
+
+    var pagesL = pages;
+    pagesL[2].active = true;
+    res.status(200).render("defi", {
+        pageTitle: "LuluZed - Mon Défi",
+        scripts: ["defi","demo/datatables-demo"],
+        filAriane: [pagesL[0], pagesL[2]],
+        notifs: notifs,
+        pages: pagesL
+    });    
     
 });
 
 app.get("/defi_stats.html", (req,res) => {
     
-    
+    var pagesL = pages;
+    pagesL[1].active = true;
+    res.status(200).render("defi_stats", {
+        pageTitle: "LuluZed - Statistiques Défi",
+        scripts: ["defi_stats"],
+        filAriane: [pagesL[0], pagesL[1]],
+        notifs: notifs,
+        pages: pagesL
+    });  
+
 });
 
 app.get("/ateliers.html", (req,res) => {
-    
+
+    var pagesL = pages;
+    pagesL[3].active = true;
+    res.status(200).render("ateliers", {
+        pageTitle: "LuluZed - Agenda",
+        scripts: ["demo/chart-area-demo", "demo/datatables-demo"],
+        filAriane: [pagesL[0], pagesL[3]],
+        notifs: notifs,
+        pages: pagesL
+    });  
     
 });
 
