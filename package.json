@@ -1,0 +1,27 @@
+{
+  "name": "prozed",
+  "version": "0.0.1",
+  "description": "Interface de LuluZed",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lacaravaneducodeur/ProZed.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lacaravaneducodeur/ProZed/issues"
+  },
+  "homepage": "https://github.com/Lacaravaneducodeur/ProZed#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0",
+    "json": "^9.0.6",
+    "nodemon": "^1.18.6",
+    "url": "^0.11.0"
+  }
+}
