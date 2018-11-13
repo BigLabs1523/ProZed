@@ -11,6 +11,10 @@ app.use("/js", express.static("js"));
 app.use("/vendor", express.static("vendor"));
 app.use("/doc", express.static("doc"));
 
+function copyObjectArray(a){
+    return JSON.parse(JSON.stringify(a));
+}
+
 var menu =  {
     
 };
@@ -54,7 +58,7 @@ var notifs = [
 
 
 app.get("/", (req,res) => {
-    var pagesL = pages;
+    var pagesL = copyObjectArray(pages);
     pagesL[0].active = true;
     res.status(200).render("index", {
         pageTitle: "LuluZed - Tableau de Bord",
@@ -73,18 +77,29 @@ app.get("/", (req,res) => {
 });
 
 app.get("/login.html", (req,res) => {
-    
-    
+        res.status(200).render("login", {
+        pageTitle: "LuluZed - Connexion",
+        scripts: [""]
+        });
 });
 
 app.get("/register.html", (req,res) => {
-    
-    
+        res.status(200).render("register", {
+        pageTitle: "LuluZed - Inscription",
+        scripts: [""]
+        });
+});
+
+app.get("/forgot-password.html", (req,res) => {
+        res.status(200).render("forgot-password", {
+        pageTitle: "LuluZed - Mot de passe oublié",
+        scripts: [""]
+        });
 });
 
 app.get("/defi.html", (req,res) => {
 
-    var pagesL = pages;
+    var pagesL = copyObjectArray(pages);
     pagesL[2].active = true;
     res.status(200).render("defi", {
         pageTitle: "LuluZed - Mon Défi",
@@ -98,7 +113,7 @@ app.get("/defi.html", (req,res) => {
 
 app.get("/defi_stats.html", (req,res) => {
     
-    var pagesL = pages;
+    var pagesL = copyObjectArray(pages);
     pagesL[1].active = true;
     res.status(200).render("defi_stats", {
         pageTitle: "LuluZed - Statistiques Défi",
@@ -112,7 +127,7 @@ app.get("/defi_stats.html", (req,res) => {
 
 app.get("/ateliers.html", (req,res) => {
 
-    var pagesL = pages;
+    var pagesL = copyObjectArray(pages);
     pagesL[3].active = true;
     res.status(200).render("ateliers", {
         pageTitle: "LuluZed - Agenda",
@@ -120,6 +135,22 @@ app.get("/ateliers.html", (req,res) => {
         filAriane: [pagesL[0], pagesL[3]],
         notifs: notifs,
         pages: pagesL
+    });  
+    
+});
+
+app.get("/membre_edit.html", (req,res) => {
+
+    res.status(200).render("membre_edit", {
+        pageTitle: "LuluZed - Espace membre",
+        scripts: [],
+        filAriane: [pages[0],{
+                        active: true,
+                        nom: "Edition profil",
+                        adresse: "",   
+                    }],
+        notifs: notifs,
+        pages: pages
     });  
     
 });
