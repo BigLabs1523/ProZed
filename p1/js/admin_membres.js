@@ -1,23 +1,33 @@
 
-var infoDialog;
-var infoDialogLink;
 
-function showFamily(members, id) {
-    infoDialog.innerHTML = "<ul>";
-    for (var i = 0; i < members.length; i++)
-    {
-        infoDialog.innerHTML += "<li>"+members[i]+"</li>";
-    }
-    $('#infoFamilleModal').modal('show');
-    infoDialog.innerHTML += "</ul>";
-    infoDialogLink.href = "admin_membre.html?confirm="+id;
-    //TODO: send AJAX request instead of changing link
-}
 
 $(document).ready(function() {
     
-    infoDialog = document.getElementById("familyDialogBody");
-    infoDialogLink = document.getElementById("familyDialogLink");
+    
+    $(".payeLink").attr("href", "#"); //supprime le lien pour ceux qui n'ont pas javascript
+    
+    $(".payeLink").on("click", function() {
+        
+        
+        
+        $.ajax({
+            url: 'admin_membres.html',
+            dataType: 'json',
+            type: 'post',
+            contentType: 'text/json',
+            data: {
+                id: $(this).attr("data-id"),
+               token: $(this).attr("data-token")
+            },
+            success: function( data, textStatus, jQxhr ){
+                //use data
+                $(this).text(data["val"]);
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+    });
     
   $('#dataTable').DataTable({
             "language": {
@@ -52,3 +62,5 @@ $(document).ready(function() {
 
 });
 });
+
+
