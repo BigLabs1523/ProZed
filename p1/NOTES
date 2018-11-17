@@ -1,2 +1,11 @@
 https://legacy.datatables.net/examples/data_sources/server_side.html 
 (permet de offload la pagination des tableaux au backend)
+
+Pour placer les marqueurs sur la carte:
+Coordonee GPS peuvent etre trouvee avec Nominatim (service OpenStreetMap). L'API devrait etre
+utilisee plus tard (elle peut renvoyer du JSON) pour le geocoding.
+(Traduction adresse vers coordonnee)
+Les requetes peuvent se faire par get ou post vers une url, le format de la reponse est reglable, JSON est disponible.
+Pour mes tests j'ai utilise GET et reponse JSON. Firefox possede un visualisateur JSON integre btw, ce qui est pratique.
+
+Resume: Voir le wiki OpenStreetMap au sujet de Nominatim.
