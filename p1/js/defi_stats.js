@@ -116,6 +116,8 @@ lineChart = new Chart(ctx, {
     }
   }
 });
+
+updateChart(lineChart, $("#dataTypeSelector").val(), [$("#dataTypeSelector").attr("data-idFamille"), "*AVERAGE*"]);
 });
 
 
@@ -156,7 +158,8 @@ function updateChart(chart, channel, subjects){
 
 }
 
-$("#dataTypeSelector").on("change", function() {
+//$("#dataTypeSelector").on("change", function() {
+$(".familleSelector").on("change", function() {
 
     //console.log("triggered");
     //console.log(lineChart.options.scales.yAxes[0].ticks);
@@ -166,10 +169,10 @@ $("#dataTypeSelector").on("change", function() {
             selected.push($(this).attr("data-idFamille"));
     });
 
-    selected.unshift($(this).attr("data-idFamille")); //the current family id
+    selected.unshift($("#dataTypeSelector").attr("data-idFamille")); //the current family id
     selected.push("*AVERAGE*"); //special marker, tell the server to compute and return the average
     
     //console.log(selected);
-    updateChart(lineChart, $(this).val(), selected); //this .val contains the current channel, because the selector triggered this event
+    updateChart(lineChart, $("#dataTypeSelector").val(), selected); //this .val contains the current channel, because the selector triggered this event
     
 });

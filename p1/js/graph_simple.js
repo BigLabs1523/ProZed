@@ -2,18 +2,24 @@ var lineChart;
 
 function updateChart(chart, channel, subjects){
     
-           var rawData;
+           
            $.ajax({
                 url: 'chart_data_api.php',
                 dataType: 'json',
                 type: 'get',
+                indexValue: [chart, channel, subjects],
                 contentType: 'text/json',
                 data: {
                     channel: channel,
                     from: subjects
                 },
                 success: function( data, textStatus, jQxhr ){
-                    rawData = data;
+                    var rawData = data;
+                    for(var i = 0; i < this.indexValue[2].length; i++)
+                    {
+                        this.indexValue[0].data.datasets[i].data = rawData.data[i];
+                        this.indexValue[0].options.scales.yAxes[0].ticks = rawData.yScaleTicks;
+                    }
                 },
                 error: function( jqXhr, textStatus, errorThrown ){
                     console.log( errorThrown );
@@ -21,12 +27,7 @@ function updateChart(chart, channel, subjects){
                     return;
                 }
             });
-           if(!rawData) return;
-           for(var i = 0; i < subjects.length; i++)
-           {
-            chart.data.datasets[i].data = rawData.data[i];
-            chart.options.scales.yAxes[0].ticks = rawData.yScaleTicks;
-           }
+
 }
 
 
@@ -91,6 +92,7 @@ lineChart = new Chart(ctx, {
   }
 });
 
+updateChart(lineChart, $("#dataTypeSelector").val(), [$("#dataTypeSelector").attr("data-idFamille"), "*AVERAGE*"]);
 });
 
 $("#dataTypeSelector").on("change", function() {
