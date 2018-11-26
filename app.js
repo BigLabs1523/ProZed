@@ -62,7 +62,7 @@ app.get("/", (req,res) => {
     pagesL[0].active = true;
     res.status(200).render("index", {
         pageTitle: "LuluZed - Tableau de Bord",
-        scripts: ["carte","demo/chart-area-demo"],
+        scripts: ["carte","graph_simple"],
         filAriane: [pagesL[0],{
                         active: true,
                         nom: "Aperçu",

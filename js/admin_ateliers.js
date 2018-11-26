@@ -1,15 +1,9 @@
-var chkBox_en = document.getElementById("en_seats");
-var box = document.getElementById("seats");
 
-function updateBox() {
-        box.disabled = !chkBox_en.checked;
-}
-
-
-chkBox_en.onchange = updateBox;
 
 $(document).ready(function() {
-  updateBox();
+    
+  document.getElementById("desc").value = "";
+  
   $('#dataTable').DataTable({
             "language": {
 	"sProcessing":     "Traitement en cours...",

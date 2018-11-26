@@ -9,28 +9,26 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Novembre", "Décembre", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin"],
     datasets: [{
-      label: "Ordures ménagères",
-      backgroundColor: "rgba(138,138,138,0.2)",
-      borderColor: "rgba(0,0,0,1)",
-      data: [30, 40, 26, 42, 34, 33, 28, 31]
-    }, {
+        label: "Ordures ménagères",
+        backgroundColor: "rgba(23,32,42,0.1)",
+        borderColor: "rgba(23,32,42,1)",
+        data: [49, 47, 35, 31, 31, 30, 25, 22]
+      },{
+          label: "Tri sélectif",
+          borderColor: "rgba(219,181,0,1)",
+          backgroundColor: "rgba(219,181,0,0.05)",
+          data: [31, 24, 25, 19, 21, 21, 20, 19]
+      },{
+          label: "Verre",
+          borderColor: "rgba(54,153,199,1)",
+          backgroundColor: "rgba(54,153,199,0.05)",
+          data: [26, 23, 26, 15, 21, 18, 20, 17]
+      },{
         label: "Compost",
-        borderColor: "rgba(0,174,21,0.5)",
-        backgroundColor: "rgba(0,120,21,0.6)",
-        data: [35, 60, 56, 32, 27, 33, 24, 12]
-    }, {
-        label: "Verre",
-        borderColor: "rgba(0,188,226,0.5)",
-        backgroundColor: "rgba(123,234,255,0.8)",
-
-        data: [35, 64, 16, 32, 37, 53, 54, 12]
-    }, {
-        label: "Tri sélectif",
-        borderColor: "rgba(219,181,0,0.5)",
-        backgroundColor: "rgba(255,255,25,0.8)",
-
-        data: [35, 40, 66, 42, 17, 33, 24, 12]
-    }],
+        borderColor: "rgba(20,90,50,1)",
+        backgroundColor: "rgba(25,111,61,0.05)",
+        data: [26, 28, 32, 25, 32, 32, 32, 29]
+    } ],
   },
   options: {
     scales: {

@@ -1,0 +1,50 @@
+<% include ./partials/header.ejs %> 
+
+        
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Saisie rapide</div>
+              <form>
+            <div class="card-body">
+                
+                    <div class="form-row">
+                        <div class="col-auto">
+                            <div class="input-group mb-2">
+                                
+                                
+                                
+                                <input type="number" name="kgs" min="0" class="form-control" id="kgs" placeholder="Poids">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Kgs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <input type="submit" class="form-control" value="Envoyer">
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="card-footer small text-muted ">
+                <div class="form-row align-items-center">
+                <div class="col-auto">Saisie pour le </div><div class="col-auto"><input type="date" name="date" value="10-10-2018" max="10-10-2019" class="form-control" placeholder="Poids"></div>.</div>
+            </div>
+          </form>
+          </div>
+          
+          <!-- Area Chart Example-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              Apercu rapide</div>
+            <div class="card-body">
+              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Mise a jour de xxhxx.</div>
+          </div>
+
+
+
+<% include ./partials/footer.ejs %> 
+
